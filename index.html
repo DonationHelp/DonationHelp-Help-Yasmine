@@ -88,10 +88,12 @@
         }
 
         .qr-code {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: auto;
+            max-height: 320px;
             display: block;
             border-radius: 8px;
+            object-fit: contain;
         }
 
         .pay-label {
@@ -149,7 +151,7 @@
 <body>
 
     <div class="card">
-        <span class="badge">Medical Campaign for help</span>
+        <span class="badge">Medical Campaign</span>
         <h1>Help Yasmine's Mother</h1>
         
         <div class="story">
@@ -160,13 +162,13 @@
         </div>
 
         <div class="qr-wrapper">
-            <img class="qr-code" src="qrcode.png" alt="Binance Pay QR Code">
+            <img class="qr-code" src="22283.png" alt="Binance Pay QR Code">
         </div>
 
-        <div class="pay-label">Binance Pay User ID</div>
-        <div class="pay-id-box" id="payId">User-a2d98ee9</div>
+        <div class="pay-label">Binance Pay Account Name</div>
+        <div class="pay-id-box" id="payId">yasmen ouda</div>
 
-        <button id="copyBtn" onclick="copyID()">Copy User ID</button>
+        <button id="copyBtn" onclick="copyID()">Copy Account Name</button>
         
         <div class="footer-note">Thank you for your support ❤️</div>
     </div>
@@ -182,7 +184,7 @@
                 btn.style.color = "#ffffff";
 
                 setTimeout(function() {
-                    btn.innerText = "Copy User ID";
+                    btn.innerText = "Copy Account Name";
                     btn.style.background = "linear-gradient(135deg, #f0b90b, #f8d33a)";
                     btn.style.color = "#000000";
                 }, 2000);
@@ -192,3 +194,4 @@
 
 </body>
 </html>
+
