@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Help Yasmine's Mother</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            background: radial-gradient(circle at top, #181a20, #0b0e11);
+            color: #ffffff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            padding: 24px 16px;
+        }
+
+        .card {
+            background: rgba(30, 35, 41, 0.85);
+            backdrop-filter: blur(16px);
+            border: 1px solid rgba(240, 185, 11, 0.25);
+            border-radius: 24px;
+            padding: 32px 24px;
+            text-align: center;
+            max-width: 460px;
+            width: 100%;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6), 0 0 20px rgba(240, 185, 11, 0.05);
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(240, 185, 11, 0.15);
+            color: #f0b90b;
+            font-size: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 14px;
+            border-radius: 20px;
+            margin-bottom: 16px;
+            border: 1px solid rgba(240, 185, 11, 0.3);
+        }
+
+        h1 {
+            font-size: 24px;
+            font-weight: 800;
+            color: #ffffff;
+            margin-bottom: 16px;
+            letter-spacing: -0.5px;
+        }
+
+        .story {
+            color: #eaecef;
+            font-size: 14px;
+            line-height: 1.6;
+            text-align: left;
+            background: rgba(0, 0, 0, 0.2);
+            padding: 16px;
+            border-radius: 12px;
+            border-left: 3px solid #f0b90b;
+            margin-bottom: 24px;
+        }
+
+        .story p {
+            margin-bottom: 12px;
+        }
+
+        .story p:last-child {
+            margin-bottom: 0;
+            font-weight: 600;
+        }
+
+        .qr-wrapper {
+            background: #ffffff;
+            padding: 16px;
+            border-radius: 16px;
+            display: inline-block;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+            margin-bottom: 20px;
+        }
+
+        .qr-code {
+            width: 200px;
+            height: 200px;
+            display: block;
+            border-radius: 8px;
+        }
+
+        .pay-label {
+            font-size: 12px;
+            font-weight: 600;
+            color: #848e9c;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-bottom: 8px;
+        }
+
+        .pay-id-box {
+            background: #2b313a;
+            border: 1px dashed #474d57;
+            padding: 12px;
+            border-radius: 12px;
+            font-size: 16px;
+            font-weight: 700;
+            color: #f0b90b;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            word-break: break-all;
+        }
+
+        button {
+            background: linear-gradient(135deg, #f0b90b, #f8d33a);
+            color: #000000;
+            border: none;
+            padding: 14px;
+            font-weight: 700;
+            font-size: 15px;
+            border-radius: 12px;
+            cursor: pointer;
+            width: 100%;
+            transition: all 0.2s ease;
+            box-shadow: 0 4px 15px rgba(240, 185, 11, 0.3);
+        }
+
+        button:hover {
+            opacity: 0.95;
+            box-shadow: 0 6px 20px rgba(240, 185, 11, 0.4);
+        }
+
+        button:active {
+            transform: scale(0.98);
+        }
+
+        .footer-note {
+            font-size: 12px;
+            color: #5e6673;
+            margin-top: 16px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="card">
+        <span class="badge">Medical Campaign for help</span>
+        <h1>Help Yasmine's Mother</h1>
+        
+        <div class="story">
+            <p>My name is Yasmine, I'm 23 years old and I'm from Gaza. I am reaching out to you with all the strength I have left. My mother is very ill. She suffers from severe osteoporosis, spine problems, and cancer. Doctors say she urgently needs complex surgery. In addition, severe anemia and frequent infections weaken her even further.</p>
+            <p>I watch her every day in pain, trying to stay strong for us while her body gives in. Medical care here in Gaza is limited, and the costs of surgery and medication are far beyond our reach.</p>
+            <p>I ask for your help. Your support can save her life, ease her suffering, and bring hope back to our family. Even the smallest donation, share, or prayer makes a huge difference.</p>
+            <p>Thank you for reading and May God bless you for all your kindness.<br><br>— Yasmine</p>
+        </div>
+
+        <div class="qr-wrapper">
+            <img class="qr-code" src="qrcode.png" alt="Binance Pay QR Code">
+        </div>
+
+        <div class="pay-label">Binance Pay User ID</div>
+        <div class="pay-id-box" id="payId">User-a2d98ee9</div>
+
+        <button id="copyBtn" onclick="copyID()">Copy User ID</button>
+        
+        <div class="footer-note">Thank you for your support ❤️</div>
+    </div>
+
+    <script>
+        function copyID() {
+            var idText = document.getElementById("payId").innerText;
+            var btn = document.getElementById("copyBtn");
+
+            navigator.clipboard.writeText(idText).then(function() {
+                btn.innerText = "Copied to Clipboard! ✓";
+                btn.style.background = "linear-gradient(135deg, #0ecb81, #26de9b)";
+                btn.style.color = "#ffffff";
+
+                setTimeout(function() {
+                    btn.innerText = "Copy User ID";
+                    btn.style.background = "linear-gradient(135deg, #f0b90b, #f8d33a)";
+                    btn.style.color = "#000000";
+                }, 2000);
+            });
+        }
+    </script>
+
+</body>
+</html>
